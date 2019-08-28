@@ -17,14 +17,17 @@ ab6a64490a4e        nginx               "nginx -g 'daemon of…"   2 minutes ago
 $ docker ps -a`
 
 `CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                          PORTS               NAMES
+
 53bc613622f1        nginx               "nginx -g 'daemon of…"   3 minutes ago       Exited (0) About a minute ago                       naughty_mclean
 bbd5fad9f92d        nginx               "nginx -g 'daemon of…"   3 minutes ago       Exited (0) About a minute ago                       hungry_goodall
 ab6a64490a4e        nginx               "nginx -g 'daemon of…"   4 minutes ago       Up 4 minutes                    80/tcp              clever_meitner`
 
 `$ docker stop ab
+
 ab`
 
 `$ docker rm ab 53 bb
+
 ab
 53
 bb`
@@ -32,7 +35,9 @@ bb`
 `$ docker images`
 
 `REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+
 nginx               latest              e445ab08b2be        2 weeks ago         126MB`
+
 `$ docker rmi e`
 
 `Untagged: nginx:latest
@@ -62,6 +67,7 @@ $ docker run -it devopsdockeruh/pull_exercise
 `
 
 `Unable to find image 'devopsdockeruh/pull_exercise:latest' locally
+
 latest: Pulling from devopsdockeruh/pull_exercise
 8e402f1a9c57: Pull complete 
 5e2195587d10: Pull complete 
@@ -71,6 +77,7 @@ latest: Pulling from devopsdockeruh/pull_exercise
 Digest: sha256:7c0635934049afb9ca0481fb6a58b16100f990a0d62c8665b9cfb5c9ada8a99f
 Status: Downloaded newer image for devopsdockeruh/pull_exercise:latest
 Give me the password: basics
+
 You found the correct password. Secret message is:
 "This is the secret message"
 `
