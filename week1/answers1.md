@@ -187,6 +187,11 @@ and the backend with `docker run -it -p 8000:8000 -v $(pwd)/logs.txt:/logs.txt <
 Added the environment variables to respective Dockerfiles in front of the npm start command as instructed, e.g. 
 `CMD FRONT_URL=http://localhost:5000  npm start`. See the Dockerfiles.
 
+
+## 1.13
+
+See Dockerfile in folder task_1.13
+
 ## 1.14
 
 
