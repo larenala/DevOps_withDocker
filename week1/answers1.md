@@ -71,20 +71,27 @@ You found the correct password. Secret message is:
 3. In another terminal: 
 
 found out the process name
-`docker ps
+`docker ps`
+
+```
 CONTAINER ID        IMAGE                               COMMAND                  CREATED             STATUS              PORTS               NAMES
 c21ca70227bf        devopsdockeruh/exec_bash_exercise   "node index"             2 minutes ago       Up 2 minutes                            silly_shannon
 
 docker attach --sig-proxy=false silly_shannon (attached terminal)
 Wrote to file /usr/app/logs.txt
 Wrote to file /usr/app/logs.txt
-^C`
+^C
+```
+
 entered the container:
-`docker exec -it silly_shannon bash
-root@c21ca70227bf:/usr/app# tail -f ./logs.txt`
+
+```
+docker exec -it silly_shannon bash
+root@c21ca70227bf:/usr/app# tail -f ./logs.txt
 
 Secret message is:
 "Docker is easy"
+```
 
 ^C  & exit to exit the container 
 
