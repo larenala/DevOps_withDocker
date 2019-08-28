@@ -4,6 +4,7 @@
 ## 1.1
 
 `$ docker ps -a`
+
 `CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS               NAMES
 53bc613622f1        nginx               "nginx -g 'daemon of…"   2 minutes ago       Exited (0) 18 seconds ago                       naughty_mclean
 bbd5fad9f92d        nginx               "nginx -g 'daemon of…"   2 minutes ago       Exited (0) 5 seconds ago                        hungry_goodall
@@ -14,39 +15,53 @@ ab6a64490a4e        nginx               "nginx -g 'daemon of…"   2 minutes ago
 
 `
 $ docker ps -a`
+
 `CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                          PORTS               NAMES
 53bc613622f1        nginx               "nginx -g 'daemon of…"   3 minutes ago       Exited (0) About a minute ago                       naughty_mclean
 bbd5fad9f92d        nginx               "nginx -g 'daemon of…"   3 minutes ago       Exited (0) About a minute ago                       hungry_goodall
 ab6a64490a4e        nginx               "nginx -g 'daemon of…"   4 minutes ago       Up 4 minutes                    80/tcp              clever_meitner`
+
 `$ docker stop ab
-ab
+ab`
+
 `$ docker rm ab 53 bb
 ab
 53
 bb`
+
 `$ docker images`
+
 `REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 nginx               latest              e445ab08b2be        2 weeks ago         126MB`
 `$ docker rmi e`
+
 `Untagged: nginx:latest
 Untagged: nginx@sha256:eb3320e2f9ca409b7c0aa71aea3cf7ce7d018f03a372564dbdb023646958770b
 Deleted: sha256:e445ab08b2be8b178655b714f89e5db9504f67defd5c7408a00bade679a50d44
 Deleted: sha256:4f71ea073b438369b87f20ad9cc8aca17efcd777a98ef6a396cebaa84355e46c
 Deleted: sha256:1758ea933cbf0900bc59fa45893440675d66d8848c3595f6f6ae9cdac34ecaf0
 Deleted: sha256:d8a33133e477d367977987129313d9072e0ec80894ed4c52c2d88186f354c29a`
+
 `$ docker ps -a`
+
 `CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES`
+
 `$ docker ps -a`
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES`
-`$ docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+
+`CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES`
+
+`$ docker images`
+
+`REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 `
 
 ## 1.3
 
 `
-Lauras-MacBook:~ laurareivinen$ docker run -it devopsdockeruh/pull_exercise
-Unable to find image 'devopsdockeruh/pull_exercise:latest' locally
+$ docker run -it devopsdockeruh/pull_exercise
+`
+
+`Unable to find image 'devopsdockeruh/pull_exercise:latest' locally
 latest: Pulling from devopsdockeruh/pull_exercise
 8e402f1a9c57: Pull complete 
 5e2195587d10: Pull complete 
