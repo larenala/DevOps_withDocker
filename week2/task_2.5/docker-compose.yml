@@ -1,0 +1,20 @@
+version: '3.5'
+
+services:
+  redis:
+      image: redis:latest
+      restart: unless-stopped 
+  backend:
+      image: logger
+      environment:
+        - REDIS=redis 
+        - REDIS_PORT=6379
+        - FRONT_URL=http://localhost:5000
+      ports:
+        - 8000:8000
+  frontend:
+    image: frontend
+    environment:
+      - API_URL=http://localhost:8000
+    ports:
+      - 5000:5000
