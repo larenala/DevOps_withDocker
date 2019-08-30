@@ -13,6 +13,10 @@ services:
       - POSTGRES_PASSWORD=example
     container_name: db_button
 
+  redis:
+      image: redis:latest
+      restart: unless-stopped 
+
   backend:
     image: logger
     environment:
@@ -21,6 +25,8 @@ services:
       - DB_DATABASE=postgres
       - DB_USERNAME=postgres
       - DB_PASSWORD=example
+      - REDIS=redis 
+      - REDIS_PORT=6379
       - FRONT_URL=http://localhost:5000
     ports:
       - 8000:8000
@@ -33,4 +39,3 @@ services:
       - API_URL=http://localhost:8000
     ports:
       - 5000:5000
-
