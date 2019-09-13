@@ -1,15 +1,20 @@
-FROM node:alpine
+FROM ubuntu:16.04
 
-RUN adduser app --disabled-password
+RUN useradd -m app
 
 WORKDIR /
 
 COPY --chown=app:app . /
 
-RUN npm install
+RUN apt-get update && apt-get install -y curl gnupg  && \
+    curl -sL https://deb.nodesource.com/setup_11.x  | bash - && \
+    apt-get -y install nodejs && \
+    npm install &&  npm audit fix && \
+    apt-get purge -y --auto-remove curl && \
+    rm -rf /var/lib/apt/lists/*
 
-USER app
+USER app 
 
 EXPOSE 5000
 
-CMD API_URL=http://localhost:8000  npm start
+CMD API_URL=http://localhost:8000 npm start

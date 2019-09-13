@@ -22,7 +22,7 @@ services:
       - ./redis-data:/data
 
   backend:
-    image: logger_noroot
+    image: logger_optimized_norootuser
     environment:
       - DB_HOST=db_button
       - DB_PORT=5431
@@ -38,7 +38,7 @@ services:
       - db
 
   frontend:
-    image: front_noroot
+    image: frontend_optimized_norootuser
     environment:
       - API_URL=http://localhost:8000
     ports:
