@@ -5,22 +5,22 @@ FROM node:alpine as builder
 
 WORKDIR /usr/src/app
 
-RUN adduser -D app
-
-COPY --chown=app:app . /usr/src/app
+COPY . /usr/src/app
 
 RUN npm i && \
     npm run build
 
-USER app
+FROM node:alpine
 
-FROM node:8.9.4
+RUN adduser -D app
 
-COPY --from=builder  /usr/src/app/build/ /build/
+COPY --from=builder --chown=app:app  /usr/src/app/build/ /build/
 
 RUN npm install -g serve
 
 EXPOSE 3000
+
+USER app
 
 CMD ["serve", "-s", "-l", "3000", "build"]
 
